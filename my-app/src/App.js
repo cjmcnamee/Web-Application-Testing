@@ -3,30 +3,30 @@ import './App.css';
 
 function App() {
   const [balls, setBalls] = useState(0);
-  const [strikes, setstrikes] = useState(0);
-  const [fouls, setFouls] = setState(0);
-  const [hits, setHits] = setState();
+  const [strikes, setStrikes] = useState(0);
+  const [fouls, setFouls] = useState(0);
+  const [hits, setHits] = useState(0);
 
   const handleBalls = () => {
-    if(balls <= 4) {
-      setBalls(balls + 1);
+    if(balls < 3) {
+      return setBalls(balls + 1);
     } else {
-      handleHit();
+      return handleHits();
     }
   }
 
   const handleStrikes = () => {
     if(strikes < 2) {
-      setStrikes(strikes + 1);
+      return setStrikes(strikes + 1);
     } else {
-      handleHit();
+      return handleHits();
     }
   }
 
   const handleFouls = () => {
     if(strikes < 2) {
-      setStrikes(strikes + 1);
-    }
+      return setStrikes(strikes + 1);
+    } 
   }
 
   const handleHits = () => {
@@ -38,7 +38,7 @@ function App() {
     <div className="scoreboard">
       <div className="display">
         <div>Balls: {balls}</div>
-        <div>Strikes: {strikes} </div>
+        <div>Strikes: {strikes}</div>
       </div>
       <button onClick={handleBalls}>Add Ball</button>
       <button onClick={handleStrikes}>Add Strike</button>
