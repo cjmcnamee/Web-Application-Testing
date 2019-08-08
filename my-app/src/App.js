@@ -26,7 +26,7 @@ function App() {
   const handleFouls = () => {
     if(strikes < 2) {
       return setStrikes(strikes + 1);
-    } 
+    }
   }
 
   const handleHits = () => {
